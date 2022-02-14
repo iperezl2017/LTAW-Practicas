@@ -7,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
   }
   body {
-    background: #d1d1d1;
+    background: #bff8e5;
   }
   .checkbox {
     display: none;
@@ -74,7 +74,7 @@
     margin: 0.5rem;
   }
   a {
-    margin: 0 1rem;
+    margin: 0.1rem;
     color: #000;
     text-decoration: none;
   }
