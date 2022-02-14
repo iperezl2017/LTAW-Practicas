@@ -1,14 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-  }
-  body {
-    background: #bff8e5;
-  }
   .checkbox {
     display: none;
   }
@@ -79,7 +68,7 @@
     text-decoration: none;
   }
   .checkbox:checked ~ .menu {
-    background: #fff;
+    background: rgb(255, 255, 255);
     top: 0rem;
   }
   .checkbox:checked + header .header-container label .header-button {
