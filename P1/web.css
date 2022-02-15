@@ -10,28 +10,27 @@
     background: #bff8e5;
   }
   .loveyi{
-    background: url(loveyi.jpg);
-    background-size: 100% 100%;
     width: 17rem;
-    height: 11rem;
+    height: 13rem;
     margin-top: 15%;
     margin-left: 10%;
     position: absolute;
+    border: 42px solid black;
+    border-image-width: 1;
+    border-image-source: url(https://i.imgur.com/YC5PUl6.png);
+    border-image-slice: 23%;
+    border-image-repeat: round;
   }
   .recycledj{
-    background: url(recycled.jpg);
-    background-size: 100% 100%;
     width: 17rem;
-    height: 11rem;
+    height: 13rem;
     margin-top: 15%;
     margin-left: 40%;
     position: absolute;
   }
   .oliver{
-    background: url(olivertree.jpg);
-    background-size: 100% 100%;
     width: 17rem;
-    height: 11rem;
+    height: 13rem;
     margin-top: 15%;
     margin-left: 70%;
     position: absolute;
