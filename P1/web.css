@@ -10,36 +10,29 @@
     background: #bff8e5;
   }
   .loveyi{
+    background: url(loveyi.jpg);
+    background-size: 100% 100%;
+    width: 17rem;
+    height: 11rem;
     margin-top: 15%;
     margin-left: 10%;
     position: absolute;
   }
   .recycledj{
+    background: url(recycled.jpg);
+    background-size: 100% 100%;
+    width: 17rem;
+    height: 11rem;
     margin-top: 15%;
     margin-left: 40%;
     position: absolute;
   }
   .oliver{
+    background: url(olivertree.jpg);
+    background-size: 100% 100%;
+    width: 17rem;
+    height: 11rem;
     margin-top: 15%;
     margin-left: 70%;
     position: absolute;
   }
-  /*body{
-    background-color: lightblue;
-}
-/*div{
- background-color: lightblue;
- width: auto;
- height: auto;
-}
-/*#BarraTareas{
-    background-color: rebeccapurple;
-    width: 1840px; 
-    height: 80px;
-    border-style:solid;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    text-align: center;
-}
