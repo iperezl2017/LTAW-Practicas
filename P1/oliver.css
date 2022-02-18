@@ -1,3 +1,18 @@
 body{
     background-color: rgb(214, 255, 119);
 }
+#imagen {
+    position: absolute;
+    height: 290px;
+    width: 290px;
+    margin: 50px 20px;
+    float: left;
+}
+#imagen img{
+    position: absolute;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+#imagen img.top:hover{
+    opacity: 0;
+}

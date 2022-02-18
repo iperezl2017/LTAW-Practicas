@@ -57,7 +57,7 @@ const server = http.createServer(function(req, res) {
     if(err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
       console.log("404 Not Found");
-      solicitud = "html/error.html";
+      solicitud = "error.html";
       data = fs.readFileSync(solicitud);
        
     }else { //-- En caso de NO dar error

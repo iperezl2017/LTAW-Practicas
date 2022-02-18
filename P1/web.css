@@ -7,31 +7,13 @@
     font-family: 'Roboto', sans-serif;
   }
   body {
-    background: #bff8e5;
+    background: #a8a8a8;
   }
-  .loveyi{
-    width: 17rem;
-    height: 13rem;
-    margin-top: 15%;
-    margin-left: 10%;
-    position: absolute;
-    border: 42px solid black;
-    border-image-width: 1;
-    border-image-source: url(https://i.imgur.com/YC5PUl6.png);
-    border-image-slice: 23%;
-    border-image-repeat: round;
-  }
-  .recycledj{
-    width: 17rem;
-    height: 13rem;
-    margin-top: 15%;
-    margin-left: 40%;
-    position: absolute;
-  }
-  .oliver{
-    width: 17rem;
-    height: 13rem;
-    margin-top: 15%;
-    margin-left: 70%;
-    position: absolute;
-  }
+.portada{
+  position: relative;
+  float: left;
+  height: 540px;
+  width: 500px;
+  margin: 100px;
+  
+}
