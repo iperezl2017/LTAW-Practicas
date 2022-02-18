@@ -10,10 +10,24 @@
     background: #a8a8a8;
   }
 .portada{
-  position: relative;
+  position: absolute;
   float: left;
-  height: 540px;
-  width: 500px;
-  margin: 100px;
-  
+  height: 25em;
+  width: 25em;
+  margin-top: 15em;
+  margin-left: 8em;
+}
+.portada2{
+  position: relative;
+  float: right;
+  height: 30em;
+  width: 25em;
+  margin-top: 12.5em;
+  margin-right: 46em;
+}
+.titulo{
+  position: relative;
+}
+.descripcion{
+  position: relative;
 }
