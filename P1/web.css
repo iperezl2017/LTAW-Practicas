@@ -34,3 +34,14 @@
 .descripcion{
   position: relative;
 }
+.redes{
+  position: fixed;
+  margin-top: 31em;
+  margin-left: 75em;
+  text-align: center;
+}
+.red{
+  width: 2em;
+  height: 2em;
+  text-align: center;
+}
