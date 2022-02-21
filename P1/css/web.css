@@ -31,17 +31,23 @@
   margin-left: 65em;
   text-align: center;
 }
+.botones{
+  position: fixed;
+  margin-top: 25em;
+  margin-left: 65em;
+  text-align: center;
+}
 .descripcion{
   position: relative;
 }
 .redes{
   position: fixed;
   margin-top: 31em;
-  margin-left: 75em;
+  margin-left: 75.7em;
   text-align: center;
 }
 .red{
-  width: 2em;
+  width: 2.5em;
   height: 2em;
   text-align: center;
 }
