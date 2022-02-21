@@ -6,7 +6,7 @@ const fs = require('fs');
 //--const URL = require('url');
 
 //-- Definir el puerto a utilizar
-const PUERTO = 9004; 
+const PUERTO = 7007; 
 
 //-- Crear el servidor
 const server = http.createServer(function(req, res) {

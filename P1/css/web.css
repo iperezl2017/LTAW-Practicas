@@ -33,9 +33,21 @@
 }
 .botones{
   position: fixed;
-  margin-top: 25em;
-  margin-left: 65em;
+  margin-top: 20em;
+  margin-left: 72em;
   text-align: center;
+}
+.btn-gray{
+  background-color: #000000;
+  text-align: center;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: dashed;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 .descripcion{
   position: relative;
