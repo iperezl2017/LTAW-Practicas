@@ -26,8 +26,10 @@
   margin-right: 46em;
 }
 .titulo{
-  margin-top: 1em;
+  position: fixed;
+  margin-top: 25em;
   margin-left: 65em;
+  text-align: center;
 }
 .descripcion{
   position: relative;
