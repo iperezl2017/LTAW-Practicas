@@ -14,7 +14,7 @@
   float: left;
   height: 30em;
   width: 30em;
-  margin-top: 10em;
+  margin-top: 15em;
   margin-left: 8em;
 }
 .portada2{
@@ -22,17 +22,17 @@
   float: left;
   height: 35em;
   width: 30em;
-  margin-top: 7.5em;
+  margin-top: 12.5em;
   margin-left: 38em;
 }
 .titulo{
-  position: fixed;
+  position: absolute;
   margin-top: 12em;
   margin-left: 75em;
   text-align: center;
 }
 .botones{
-  position: fixed;
+  position: absolute;
   margin-top: 2em;
   margin-left: 82em;
   text-align: center;
@@ -57,7 +57,7 @@
   0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .descripcion{
-  position: relative;
+  position: absolute;
 }
 .redes{
   position: fixed;
@@ -71,7 +71,7 @@
   text-align: center;
 }
 .bloque{
-  position: fixed;
+  position: relative;
   top: 0;
   height: 100%;
   display: flex;
