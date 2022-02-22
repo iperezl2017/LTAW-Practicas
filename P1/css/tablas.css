@@ -1,21 +1,52 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background: #a8a8a8;
+}
+.bloque1{
+    float: left;
+    width: 25em;
+    height: 25em;
+    margin-top: 15em;
+    margin-left: 10em;
+}
+.bloque2{
+    width: 25em;
+    height: 25em;
+    margin-left: 70em;
+    margin-top: 15em;
+    position: fixed;
+}
+.bloque3{
+    width: 25em;
+    height: 25em;
+    margin-right: 20em;
+    margin-top: 15em;
+    float: right;
 }
 .contenedor {
     position: relative;
-    margin: 50px 20px;
-    width: 40em;
-    height: 40em;
   }
 .contenedor img {
     position: absolute;
     left: 0;
     transition: opacity 1.5s ease-in-out;
-} 
+}
+.top{
+    width: 35em;
+    height: 40em;
+    border: 5px;
+    border-color: black;
+    border-radius: 15px;
+    border-style: groove;
+}
 .contenedor img.top:hover {
     opacity: 0;
 }
 .ajuste{
-    width: 40em;
+    width: 35em;
     height: 40em;
+    border: 5px;
+    border-color: black;
+    border-radius: 15px;
+    border-style: groove;
 }
+
