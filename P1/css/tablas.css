@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+.contenedor {
+    position: relative;
+    margin: 50px 20px;
+    width: 40em;
+    height: 40em;
+  }
+.contenedor img {
+    position: absolute;
+    left: 0;
+    transition: opacity 1.5s ease-in-out;
+} 
+.contenedor img.top:hover {
+    opacity: 0;
+}
+.ajuste{
+    width: 40em;
+    height: 40em;
+}

@@ -24,7 +24,9 @@ const server = http.createServer(function(req, res) {
   //-- Analizo la peticion
   if(myURL.pathname == '/') { //-- http://ip:port/
     solicitud += "/web.html" //-- Pagina principal
-  } else { // Otra peticion
+  } else if(myURL.pathname == "/favicon.icon"){
+    filename = 'imagenes/ico.ico'
+  }else { // Otra peticion
     solicitud = myURL.pathname;
   }
   
