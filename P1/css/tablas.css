@@ -9,13 +9,13 @@ body{
     width: 5em;
     height: 5em;
     margin-top: 10em;
-    margin-left: 10em;
+    margin-left: 14em;
     position: absolute;
 }
 .bloque2{
     width: 5em;
     height: 5em;
-    margin-left: 41em;
+    margin-left: 45em;
     margin-top: 10em;
     position: absolute;
 }
@@ -23,7 +23,7 @@ body{
     width: 5em;
     height: 5em;
     margin-top: 10em;
-    margin-left: 72.5em;
+    margin-left: 76.5em;
     float: right;
     position: absolute;
 }
@@ -76,18 +76,18 @@ body{
   .titulo1{
       text-align: center;
       margin-top: 35em;
-      margin-left: 12.5em;
+      margin-left: 16.5em;
       position: absolute;
   }
   .titulo2{
       text-align: center;
       margin-top: 35em;
-      margin-left: 44.5em ;
+      margin-left: 48.5em ;
       position: absolute;
   }
   .titulo3{
     text-align: center;
     margin-top: 35em;
-    margin-left: 77em ;
+    margin-left: 81em ;
     position: absolute;
 }
