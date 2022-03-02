@@ -1,1 +1,2 @@
  # Práctica 1
+La web esta compuesta por 5 htmls, el principal en el que se encuentran dos botones que te llevan al html de las zapatillas y de las tablas, en las cuales hay un boton que te de devuelve al html principal, ademas hay una barra de tareas que aparece al apretar el boton que se encuentra arriba a la derecha, dandote opcion a clickar en contact y home, que te llevaran al mismo index que los pequeños iconos de las redes sociales que aparecen abajo, a un html para las redes. Y por ultimo tenemos el ultimo archivo html que se mostrara cuando haya algun error.
