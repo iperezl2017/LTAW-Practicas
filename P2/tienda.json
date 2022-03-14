@@ -1,7 +1,80 @@
 [
-    {
-        "nombre": "",
-        "clase": "",
-        "numero": ""
-    }
+   {
+       "productos":[
+           {
+               "galletas":[
+                   {
+                        "nombre": "Galletas Principe",
+                        "precio": 2.5,
+                        "stock": 50
+                    },
+                    {
+                        "nombre": "Galletas Oreo",
+                        "precio": 3,
+                        "stock": 45
+                    },
+                    {
+                        "nombre": "Galletas Chips",
+                        "precio": 2.25,
+                        "stock": 80
+                    }
+                ],
+
+                "Zumitos":[
+                    {
+                        "nombre": "Naranja",
+                        "precio": 2.5,
+                        "stock": 50
+                    },
+                    {
+                        "nombre": "Piña",
+                        "precio": 2.5,
+                        "stock": 30
+                    },
+                    {
+                        "nombre": "Uva",
+                        "precio": 2.5,
+                        "stock": 30
+                    }
+                ],
+                "Chuches":[
+                    {
+                        "nombre": "Regaliz",
+                        "precio": 0.1,
+                        "stock": 550
+                    },
+                    {
+                        "nombre": "Chicle Melon",
+                        "precio": 0.05,
+                        "stock": 400
+                    },
+                    {
+                        "nombre": "Fresa",
+                        "precio": 0.05,
+                        "stock": 350
+                    }
+                ]
+            }
+       ],
+       "clientes":[
+            {
+                "usuario":"ivi",
+                "nombre": "Ivan Perez Lorenzo",
+                "email": "ayuda@gmail.com",
+                "contraseña": "willy"
+            }
+       ],
+       "pedidos":[
+           {
+                "usuario": "ivi",
+                "tarjeta":"5486 7865 3256 9874",
+                "direccion": "Nuketown 3",
+                "productos": [
+                    {
+                        
+                    }
+                ]
+           }
+       ]
+   }
 ]
