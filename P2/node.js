@@ -37,10 +37,7 @@ const server = http.createServer((req, res) => {
     ///tienda.clientes.push({nombre,correo,contraseña});
     console.log(nombre)
     console.log(tienda.clientes[0].usuario)
-    
-  let content_type = "text/html";
-  let content = FORMULARIO;
-  for (let step = 0; step < (tienda.clientes.length - 1); step++){
+   for (let step = 0; step < (tienda.clientes.length - 1); step++){
     console.log("bucle")
     if (nombre == tienda.clientes[step].usuario){
       console.log("1er if")
@@ -52,8 +49,9 @@ const server = http.createServer((req, res) => {
         console.log("no se que ha pasao")
       }
     }
-  }
- 
+  } 
+  let content_type = "text/html";
+  let content = FORMULARIO;
 
   //-- Si hay datos en el cuerpo, se imprimen
   req.on('data', (cuerpo) => {
