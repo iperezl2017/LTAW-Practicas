@@ -5,9 +5,9 @@ const PUERTO = 7007;
 
 const server = http.createServer(function(req, res) {
 
-  console.log("\nPetición recibida!");
+  console.log("\nPetición recibida");
   let myURL = new URL(req.url, 'http://' + req.headers['host']);
-  console.log("La URL del recurso solicitado es: " + myURL.href)
+  console.log("La URL es: " + myURL.href)
   let solicitud = "";
   if(myURL.pathname == '/') { 
     solicitud += "/web.html" 
@@ -18,8 +18,8 @@ const server = http.createServer(function(req, res) {
   }
   file_extension = solicitud.split(".")[1];
   solicitud = "." + solicitud 
-  console.log("Nombre del fichero: " + solicitud);
-  console.log("Extension del recurso: " + file_extension);
+  console.log("fichero: " + solicitud);
+  console.log("recurso: " + file_extension);
   const type_mime = {
     "html" : "text/html",
     "css" : "text/css",

@@ -8,8 +8,9 @@ const fs = require('fs');
 const PUERTO = 8080;
 
 //-- Cargar pagina web de prueba
-const EJ6_HTML = fs.readFileSync('tienda.html','utf-8');
-const LOGIN = fs.readFileSync('tienda-resp.html', 'utf-8');
+const pag_principal = fs.readFileSync('pag-principal.html','utf-8');
+const LOGIN = fs.readFileSync('tienda.html', 'utf-8');
+
 
 //-- Analizar la cookie y devolver el nombre del
 //-- usuario si existe, o null en caso contrario
@@ -50,11 +51,13 @@ function get_user(req) {
 const server = http.createServer((req, res) => {
 
   //-- Construir el objeto url con la url de la solicitud
-  const myURL = new URL(req.url, 'http://' + req.headers['host']);  
+  const myURL = new URL(req.url, 'http://' + req.headers['host']); 
+  let nombre = myURL.searchParams.get("nombre") 
 
   //-- Determinar el contenido del mensaje de respuesta
-  let content_type = "text/html";
-  let content = EJ6_HTML.replace("HTML_EXTRA","");
+
+  let content_type = "text/";
+  let content = pag_principal
 
   //-- Obtener le usuario que ha accedido
   //-- null si no se ha reconocido
@@ -70,10 +73,10 @@ const server = http.createServer((req, res) => {
 
         //-- Añadir a la página el nombre del usuario
         console.log("user: " + user);
-        content = EJ6_HTML.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>");
+        content = pag_principal.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>");
     } else {
         //-- Mostrar el enlace a la página de login
-        content = EJ6_HTML.replace("HTML_EXTRA", `
+        content = pag_principal.replace("HTML_EXTRA", `
         <a href="login">[Login]</a>
         `);
     }
@@ -90,6 +93,7 @@ const server = http.createServer((req, res) => {
       content = "ERROR!!!";
   }
      
+  content = filename.split(".").pop()
   //-- Enviar la respuesta
   res.setHeader('Content-Type', content_type);
   res.write(content);
