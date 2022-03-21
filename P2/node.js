@@ -32,26 +32,20 @@ const server = http.createServer((req, res) => {
   console.log("Recurso: " + req.url);
   console.log("  Ruta: " + myURL.pathname);
   console.log("  Parametros: " + myURL.searchParams);
-  
+  let content_type = "text/html";
+  let content = FORMULARIO;
 
-    ///tienda.clientes.push({nombre,correo,contraseña});
-    console.log(nombre)
-    console.log(tienda.clientes[0].usuario)
-   for (let step = 0; step < (tienda.clientes.length - 1); step++){
-    console.log("bucle")
+
+  for (let step = 0; step < (tienda.clientes.length); step++){
     if (nombre == tienda.clientes[step].usuario){
-      console.log("1er if")
-      if (myURL.pathname == '/procesar') {
+      if (myURL.pathname == '/procesar'){
       content_type = "text/html";
       content = RESPUESTA;
-      console.log("Hasta aqui ha llegado")
       }else{
-        console.log("no se que ha pasao")
       }
     }
   } 
-  let content_type = "text/html";
-  let content = FORMULARIO;
+  
 
   //-- Si hay datos en el cuerpo, se imprimen
   req.on('data', (cuerpo) => {
