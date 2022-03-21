@@ -1,5 +1,4 @@
-[
-   {
+{ 
        "productos":[
            {
                "galletas":[
@@ -59,7 +58,6 @@
        "clientes":[
             {
                 "usuario":"ivi",
-                "nombre": "Ivan Perez Lorenzo",
                 "email": "ayuda@gmail.com",
                 "contraseña": "willy"
             }
@@ -76,5 +74,4 @@
                 ]
            }
        ]
-   }
-]
+}

@@ -1,103 +1,76 @@
-//-- Ejemplo de login básico
-//-- La página principal detecta al usuario
-//-- Se puede acceder como usuario Chuck desde
-//-- el recurso /login
+//-- Imprimir información sobre la solicitud recibida
 
 const http = require('http');
 const fs = require('fs');
 const PUERTO = 8080;
 
-//-- Cargar pagina web de prueba
-const pag_principal = fs.readFileSync('pag-principal.html','utf-8');
-const LOGIN = fs.readFileSync('tienda.html', 'utf-8');
+//-- Npmbre del fichero JSON a leer
+const FICHERO_JSON = "tienda.json"
+//-- Leer el fichero JSON
+const  tienda_json = fs.readFileSync(FICHERO_JSON);
+//-- Crear la estructura tienda a partir del contenido del fichero
+const tienda = JSON.parse(tienda_json);
 
+const tienda2 = "tienda-2.json"
 
-//-- Analizar la cookie y devolver el nombre del
-//-- usuario si existe, o null en caso contrario
-function get_user(req) {
+//-- Cargar pagina web del formulario
+const FORMULARIO = fs.readFileSync('pag-principal.html','utf-8');
 
-  //-- Leer la Cookie recibida
-  const cookie = req.headers.cookie;
-
-  //-- Hay cookie
-  if (cookie) {
-    
-    //-- Obtener un array con todos los pares nombre-valor
-    let pares = cookie.split(";");
-    
-    //-- Variable para guardar el usuario
-    let user;
-
-    //-- Recorrer todos los pares nombre-valor
-    pares.forEach((element, index) => {
-
-      //-- Obtener los nombres y valores por separado
-      let [nombre, valor] = element.split('=');
-
-      //-- Leer el usuario
-      //-- Solo si el nombre es 'user'
-      if (nombre.trim() === 'user') {
-        user = valor;
-      }
-    });
-
-    //-- Si la variable user no está asignada
-    //-- se devuelve null
-    return user || null;
-  }
-}
+//-- HTML de la página de respuesta
+const RESPUESTA = fs.readFileSync('tienda.html', 'utf-8');
 
 //-- SERVIDOR: Bucle principal de atención a clientes
 const server = http.createServer((req, res) => {
 
   //-- Construir el objeto url con la url de la solicitud
   const myURL = new URL(req.url, 'http://' + req.headers['host']); 
-  let nombre = myURL.searchParams.get("nombre") 
+  let nombre = myURL.searchParams.get('nombre'); 
+  let correo = myURL.searchParams.get('correo'); 
+  let contraseña = myURL.searchParams.get('contraseña')
+  console.log("");
+  console.log("Método: " + req.method);
+  console.log("Recurso: " + req.url);
+  console.log("  Ruta: " + myURL.pathname);
+  console.log("  Parametros: " + myURL.searchParams);
+  
 
-  //-- Determinar el contenido del mensaje de respuesta
-
-  let content_type = "text/";
-  let content = pag_principal
-
-  //-- Obtener le usuario que ha accedido
-  //-- null si no se ha reconocido
-  let user = get_user(req);
-
-  console.log("User: " + user);
-
-  //-- Acceso al recurso raiz
-  if (myURL.pathname == '/') {
-
-    //--- Si la variable user está asignada
-    if (user) {
-
-        //-- Añadir a la página el nombre del usuario
-        console.log("user: " + user);
-        content = pag_principal.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>");
-    } else {
-        //-- Mostrar el enlace a la página de login
-        content = pag_principal.replace("HTML_EXTRA", `
-        <a href="login">[Login]</a>
-        `);
+    tienda.clientes.push({nombre,correo,contraseña});
+    for (let step = 0; step < tienda.clientes.length - 1; step++){
+      if (tienda.clientes[step].usuario){
+        tienda.clientes.splice
+      }
     }
+    
+    
+  
+  console.log(tienda["clientes"]);
+  let myJSON = JSON.stringify(tienda);
+  fs.writeFileSync(tienda2, myJSON);
+  //-- Por defecto entregar formulario
+  let content_type = "text/html";
+  let content = FORMULARIO;
 
-    //-- Acceso a otro recurso: Se hace login
-  } else if (myURL.pathname == '/login') {
-
-    //-- Asignar la cookie de usuario Chuck
-    res.setHeader('Set-Cookie', "user=Chuck");
-
-    //-- Asignar la página web de login ok
-    content = LOGIN;
-  } else {
-      content = "ERROR!!!";
+  if (myURL.pathname == '/procesar') {
+      content_type = "text/html";
+      content = RESPUESTA;
   }
-     
-  content = filename.split(".").pop()
-  //-- Enviar la respuesta
-  res.setHeader('Content-Type', content_type);
-  res.write(content);
-  res.end();
+
+  //-- Si hay datos en el cuerpo, se imprimen
+  req.on('data', (cuerpo) => {
+
+    //-- Los datos del cuerpo son caracteres
+    req.setEncoding('utf8');
+    console.log(`Cuerpo (${cuerpo.length} bytes)`)
+    console.log(` ${cuerpo}`);
+  });
+
+  //-- Esto solo se ejecuta cuando llega el final del mensaje de solicitud
+  req.on('end', ()=> {
+    //-- Generar respuesta
+    res.setHeader('Content-Type', content_type);
+    res.write(content);
+    res.end()
+  });
 
 });
 
