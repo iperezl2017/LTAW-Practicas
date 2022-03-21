@@ -34,26 +34,26 @@ const server = http.createServer((req, res) => {
   console.log("  Parametros: " + myURL.searchParams);
   
 
-    tienda.clientes.push({nombre,correo,contraseña});
-    for (let step = 0; step < tienda.clientes.length - 1; step++){
-      if (tienda.clientes[step].usuario){
-        tienda.clientes.splice
-      }
-    }
+    ///tienda.clientes.push({nombre,correo,contraseña});
+    console.log(nombre)
+    console.log(tienda.clientes[0].usuario)
     
-    
-  
-  console.log(tienda["clientes"]);
-  let myJSON = JSON.stringify(tienda);
-  fs.writeFileSync(tienda2, myJSON);
-  //-- Por defecto entregar formulario
   let content_type = "text/html";
   let content = FORMULARIO;
-
-  if (myURL.pathname == '/procesar') {
+  for (let step = 0; step < (tienda.clientes.length - 1); step++){
+    console.log("bucle")
+    if (nombre == tienda.clientes[step].usuario){
+      console.log("1er if")
+      if (myURL.pathname == '/procesar') {
       content_type = "text/html";
       content = RESPUESTA;
+      console.log("Hasta aqui ha llegado")
+      }else{
+        console.log("no se que ha pasao")
+      }
+    }
   }
+ 
 
   //-- Si hay datos en el cuerpo, se imprimen
   req.on('data', (cuerpo) => {
