@@ -42,6 +42,8 @@ const server = http.createServer((req, res) => {
   console.log("Recurso: " + req.url);
   console.log("  Ruta: " + myURL.pathname);
   console.log("  Parametros: " + myURL.searchParams);
+
+
   let content_type = "text/html";
   let content = FORMULARIO;
 
