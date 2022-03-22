@@ -19,6 +19,16 @@ const FORMULARIO = fs.readFileSync('pag-principal.html','utf-8');
 //-- HTML de la página de respuesta
 const RESPUESTA = fs.readFileSync('tienda.html', 'utf-8');
 
+const mime= {
+  "html" : "text/html",
+  "css" : "text/css",
+  "jpeg" : "image/jpeg",
+  "jpg" : "image/jpg",
+  "png" : "image/png",
+  "gif" : "image/gif",
+  "ico" : "image/ico",
+}
+
 //-- SERVIDOR: Bucle principal de atención a clientes
 const server = http.createServer((req, res) => {
 
@@ -36,15 +46,25 @@ const server = http.createServer((req, res) => {
   let content = FORMULARIO;
 
 
+
+  console.log(tienda.clientes)
   for (let step = 0; step < (tienda.clientes.length); step++){
     if (nombre == tienda.clientes[step].usuario){
-      if (myURL.pathname == '/procesar'){
-      content_type = "text/html";
-      content = RESPUESTA;
+      if (contraseña == tienda.clientes[step].contraseña){
+        if (myURL.pathname == '/procesar'){
+          content_type = "text/html";
+          content = RESPUESTA;
+        }else{
+          throw err
+        }
       }else{
+        console.log("contraseña incorrecta");
       }
+    }else{
+      console.log("Usuario no encontrado");
     }
   } 
+
   
 
   //-- Si hay datos en el cuerpo, se imprimen
