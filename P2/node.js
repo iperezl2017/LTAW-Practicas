@@ -31,22 +31,33 @@ const mime= {
 
 //-- SERVIDOR: Bucle principal de atención a clientes
 const server = http.createServer((req, res) => {
-
+  
   //-- Construir el objeto url con la url de la solicitud
   const myURL = new URL(req.url, 'http://' + req.headers['host']); 
   let nombre = myURL.searchParams.get('nombre'); 
-  let correo = myURL.searchParams.get('correo'); 
   let contraseña = myURL.searchParams.get('contraseña')
   console.log("");
   console.log("Método: " + req.method);
   console.log("Recurso: " + req.url);
   console.log("  Ruta: " + myURL.pathname);
   console.log("  Parametros: " + myURL.searchParams);
-
-
   let content_type = "text/html";
   let content = FORMULARIO;
 
+  let recurso = myURL.pathname;
+  let solicitud = ""; 
+
+    if (recurso == "/"){
+      console.log("Se ha solicitado la página principal");
+      solicitud += '/tienda.html'; //-- Pagina principal
+    } else { //-- Se solicita otro recurso
+        solicitud = myURL.pathname;  
+    } 
+
+    file_extension = solicitud.split(".")[1]; //-- Extension
+    solicitud = "." + solicitud
+
+  
 
 
   console.log(tienda.clientes)
