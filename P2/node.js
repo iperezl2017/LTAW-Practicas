@@ -19,15 +19,6 @@ const FORMULARIO = fs.readFileSync('pag-principal.html','utf-8');
 //-- HTML de la página de respuesta
 const RESPUESTA = fs.readFileSync('tienda.html', 'utf-8');
 
-const mime= {
-  "html" : "text/html",
-  "css" : "text/css",
-  "jpeg" : "image/jpeg",
-  "jpg" : "image/jpg",
-  "png" : "image/png",
-  "gif" : "image/gif",
-  "ico" : "image/ico",
-}
 
 //-- SERVIDOR: Bucle principal de atención a clientes
 const server = http.createServer((req, res) => {
@@ -44,18 +35,29 @@ const server = http.createServer((req, res) => {
   let content_type = "text/html";
   let content = FORMULARIO;
 
-  let recurso = myURL.pathname;
-  let solicitud = ""; 
-
-    if (recurso == "/"){
-      console.log("Se ha solicitado la página principal");
-      solicitud += '/tienda.html'; //-- Pagina principal
-    } else { //-- Se solicita otro recurso
-        solicitud = myURL.pathname;  
-    } 
-
-    file_extension = solicitud.split(".")[1]; //-- Extension
-    solicitud = "." + solicitud
+  let solicitud = "";
+  if(myURL.pathname == '/') { 
+    solicitud += "/web.html" 
+  }else if(myURL.pathname == "/favicon.icon"){
+    filename = 'imagenes/ico.ico'
+  }else {
+    solicitud = myURL.pathname;
+  }
+  file_extension = solicitud.split(".")[1];
+  solicitud = "." + solicitud 
+  console.log("fichero: " + solicitud);
+  console.log("recurso: " + file_extension);
+  const type_mime = {
+    "html" : "text/html",
+    "css" : "text/css",
+    "jpeg" : "image/jpeg",
+    "jpg" : "image/jpg",
+    "png" : "image/png",
+    "gif" : "image/gif",
+    "ico" : "image/ico",
+  }; 
+  let mime = type_mime[file_extension];
+  console.log("El tipo mime asociado: " + mime);
 
   
 
@@ -92,9 +94,9 @@ const server = http.createServer((req, res) => {
   //-- Esto solo se ejecuta cuando llega el final del mensaje de solicitud
   req.on('end', ()=> {
     //-- Generar respuesta
-    res.setHeader('Content-Type', content_type);
-    res.write(content);
-    res.end()
+      res.setHeader('Content-Type', mime);
+      res.write(content);
+      res.end()   
   });
 
 });
