@@ -2,7 +2,7 @@
 
 const http = require('http');
 const fs = require('fs');
-const PUERTO = 8080;
+const PUERTO = 9009;
 
 //-- Npmbre del fichero JSON a leer
 const FICHERO_JSON = "tienda.json"
