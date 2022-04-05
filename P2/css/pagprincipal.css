@@ -1,0 +1,25 @@
+body{
+    background-color: #f5c2ff;
+}
+.foto{
+    width: 990px;
+    height: 550px;
+    box-sizing: content-box;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+}
+.chupachups{
+    position: absolute;
+    box-sizing: content-box;
+    margin-left: 105em;
+    margin-top: -32.5em;
+}
+.bloque{
+    position: absolute;
+    margin-left: 88.5em;
+    margin-top: -10em;
+    padding:20px;
+    background:#f5a6dd;
+    margin-bottom:30px;
+    line-height:26px !important;    
+}
