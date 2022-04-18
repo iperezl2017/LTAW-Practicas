@@ -1,3 +1,43 @@
 body{
-    background-color: hotpink;
+    background-color: rgb(0, 0, 0);
+}
+.bloque{
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.barradetareas{
+    width: 100%;    
+    border: 1em solid rgb(245, 121, 183);
+}
+.barra{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}  
+.li{
+    float:right;
+} 
+li a {
+    display: block;
+    color: rgb(197, 0, 154);
+    text-align: center;
+    padding: 2em 2.1em;
+    text-decoration:dashed;
+
+}  
+li a:hover {
+    background-color: #111;
+}
+.logo{
+    position: absolute;
+    height: 10em;
+    width: 10em;
+    margin-top: 5em;
+    margin-left: 5em;
 }
