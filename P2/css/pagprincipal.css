@@ -1,9 +1,17 @@
 body{
     background-color: #f5c2ff;
 }
+.bloquepadre{
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
 .foto{
-    width: 990px;
-    height: 550px;
+    width: 80em;
+    height: 51.75em;
     box-sizing: content-box;
     margin-left: -0.5em;
     margin-top: -0.5em;
@@ -11,15 +19,16 @@ body{
 .chupachups{
     position: absolute;
     box-sizing: content-box;
-    margin-left: 105em;
-    margin-top: -32.5em;
+    margin-left: 81.5em;
+    margin-top: -28em;
 }
 .bloque{
     position: absolute;
-    margin-left: 88.5em;
+    margin-left: 81.5em;
     margin-top: -10em;
-    padding:20px;
+    padding: 1em;
     background:#f5a6dd;
-    margin-bottom:30px;
-    line-height:26px !important;    
+    margin-bottom:1.875em;
+    line-height:1.625em !important;    
+    text-align: center;
 }
