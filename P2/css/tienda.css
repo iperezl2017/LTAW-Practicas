@@ -49,3 +49,26 @@ li a:hover {
     margin-top: -2.3em;
     margin-left: -2em;
 }
+.Galletas{
+    margin-top: 50em;
+    margin-left: 6em;
+    border: 0.5em solid rgb(245, 121, 183);
+    position: absolute;
+}
+.Zumos{
+    border: 0.5em solid rgb(245, 121, 183);
+    position: absolute;
+    margin-top: 50em;
+    margin-left: 44.5em;
+}
+
+.Chuches{
+    border: 0.5em solid rgb(245, 121, 183);
+    position: absolute;
+    margin-top: 50em;
+    margin-left: 83em;
+}
+.foto{
+    height: 20em;
+    width: 25em;
+}

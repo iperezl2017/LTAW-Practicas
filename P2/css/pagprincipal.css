@@ -11,7 +11,7 @@ body{
 }
 .foto{
     width: 80em;
-    height: 51.75em;
+    height: 60em;
     box-sizing: content-box;
     margin-left: -0.5em;
     margin-top: -0.5em;
@@ -24,8 +24,8 @@ body{
 }
 .bloque{
     position: absolute;
-    margin-left: 83.5em;
-    margin-top: -4em;
+    margin-left: 87.5em;
+    margin-top: 0em;
     padding: 2em;
     background:#f5a6dd;
     margin-bottom:1.875em;
