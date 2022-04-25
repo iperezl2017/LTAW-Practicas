@@ -51,7 +51,7 @@ li a:hover {
 }
 .Galletas{
     margin-top: 50em;
-    margin-left: 6em;
+    margin-left: 5%;
     border: 0.5em solid rgb(245, 121, 183);
     position: absolute;
 }
@@ -59,14 +59,14 @@ li a:hover {
     border: 0.5em solid rgb(245, 121, 183);
     position: absolute;
     margin-top: 50em;
-    margin-left: 44.5em;
+    margin-left: 37.5%;
 }
 
 .Chuches{
     border: 0.5em solid rgb(245, 121, 183);
     position: absolute;
     margin-top: 50em;
-    margin-left: 83em;
+    margin-left: 70%;
 }
 .foto{
     height: 20em;

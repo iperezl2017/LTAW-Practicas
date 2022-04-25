@@ -19,12 +19,12 @@ body{
 .chupachups{
     position: absolute;
     box-sizing: content-box;
-    margin-left: 81.5em;
+    margin-left: 83.5em;
     margin-top: -28em;
 }
 .bloque{
     position: absolute;
-    margin-left: 87.5em;
+    margin-left: 77%;
     margin-top: 0em;
     padding: 2em;
     background:#f5a6dd;
