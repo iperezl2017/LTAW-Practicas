@@ -4,9 +4,11 @@ body{
 .menu{
     list-style: none;
     padding: 0;
-    background: rgb(86, 131, 255);
-    width: 100%;
+    background: rgb(85, 143, 184);
+    width: 120%;
     margin: auto;
+    margin-left: -5%;
+    margin-top: -0.5%;
 }
 .menu li{
     display: inline-block;
@@ -19,5 +21,26 @@ body{
     display: block;
 }
 .menu li a:hover{
-    background: greenyellow;
+    background: rgb(46, 83, 109);
+}
+.separador{
+    margin-left: 20%;
+}
+.logo{
+    margin-left: 13%;
+    position: absolute;
+}
+.buscador{
+    padding: 0.75em;
+    margin-left: 5%;
+}
+.boton{
+    margin-left: 40%;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    background: rgb(32, 59, 78);
+    color: white;
+}
+.cuenta{
+    margin-left: 10%;
 }
