@@ -1,13 +1,16 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+.bloque{
+    position: relative;
+}
 .menu{
     list-style: none;
     padding: 0;
     background: rgb(85, 143, 184);
-    width: 120%;
+    width: 101.5%;
     margin: auto;
-    margin-left: -5%;
+    margin-left: -1%;
     margin-top: -0.5%;
 }
 .menu li{
@@ -45,9 +48,47 @@ body{
     margin-left: 10%;
 }
 .mid{
-    margin-left: 30%;
+    margin-top: 1%;
+    margin-left: 32%;
+    position: absolute;
 }
 .pie{
-    padding: 1.25em;
-    width: 45em;
+    padding: 1em;
+    width: 40em;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.novedades{
+    border-color: greenyellow;
+    border-style: solid;
+    margin-right: 35.5%;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+}
+.guardar{
+    position: absolute;
+    padding: 0.75em;
+    border-radius: 0.25em;
+    background: rgb(85, 143, 184);
+    color: white;
+    margin-left: 90%;
+    margin-top: -6%;
+
+}
+.amigos{
+    position: absolute;
+    margin-left: 78%;
+}
+.linea{
+    margin-top: -14%;
+}
+.notificaciones{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.links{
+    color: rgb(131, 218, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
