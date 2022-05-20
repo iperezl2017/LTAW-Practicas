@@ -44,3 +44,10 @@ body{
 .cuenta{
     margin-left: 10%;
 }
+.mid{
+    margin-left: 30%;
+}
+.pie{
+    padding: 1.25em;
+    width: 45em;
+}
