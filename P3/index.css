@@ -72,8 +72,10 @@ body{
     border-radius: 0.25em;
     background: rgb(85, 143, 184);
     color: white;
-    margin-left: 90%;
+    margin-left: 80%;
     margin-top: -6%;
+    width: 20%;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 .amigos{
@@ -100,4 +102,39 @@ body{
 .img{
     width: 7em;
     height: 7em;
+}
+.img1{
+    width: 12em;
+    height: 7em;
+}
+.linea2{
+    margin-top: -3%;
+    color: greenyellow;
+}
+.buscar{
+    padding: 0.75em;
+    border-radius: 0.25em;
+}
+.enlinea{
+    border-style: solid;
+    border-color: gray;
+}
+.negro1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.negro{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-left: 2%;
+}
+.amiwis{
+    padding: 0.5em;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
 }
