@@ -92,3 +92,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
 }
+.azul{
+    color: rgb(0, 82, 206);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+.img{
+    width: 7em;
+    height: 7em;
+}
