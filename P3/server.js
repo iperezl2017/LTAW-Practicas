@@ -2,6 +2,8 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
+const { isObject } = require('util');
+const { server } = require('websocket');
 const port = 9090;
 const tiempo = Date.now();
 const fecha = new Date(tiempo);
@@ -36,3 +38,29 @@ function commands(msg){
         body = error_msg;
     }
 }
+
+io.on('connect',(socket) => {
+    console.log("nuevo usuario")
+    users += 1;
+    socket.send("Bienvenido");
+    io.send("Un nuevo usuario ha entrado en la sala");
+    socket.on('disconnect',function(){
+        console.log("desconexion");
+        users -= 1;
+        io.send("Xaoxaoxaoxao");
+    });
+
+    socket.on("message",(msg)=>{
+        console.log("mensaje recibido")
+        msg_text = msg.split(' ')[1];
+        if (msg_text.starsWith('/')){
+            body = commands(msg_text);
+            socket.send(body);
+        }else{
+            io.send(msg)
+        }
+    });
+});
+
+server.listen(port);
+console.log("Escuchando en:" + port);
