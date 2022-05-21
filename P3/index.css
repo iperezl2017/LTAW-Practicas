@@ -143,6 +143,7 @@ body{
     width: 20%;
     position: absolute;
     background-color: rgb(194, 194, 194);
+    height: fit-content;
 }
 .floren{
     margin-top: 10%;
@@ -155,4 +156,9 @@ body{
 }
 .linea3{
     margin-left: 5%;
+}
+.blanco{
+    position: absolute;
+    background-color: white;
+    margin-left: 15%;
 }
