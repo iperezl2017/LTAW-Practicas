@@ -4,6 +4,8 @@ const express = require('express');
 const colors = require('colors');
 const { isObject } = require('util');
 const { server } = require('websocket');
+const path = require('path');
+const { dirname } = require('path');
 const port = 9090;
 const tiempo = Date.now();
 const fecha = new Date(tiempo);
@@ -19,6 +21,17 @@ let list_msg = ("Usuarios conectados: ");
 let hello_msg = ("Saludos invocador");
 let date_msg = (fecha.toUTCString());
 let error_msg = ("Comando erroneo");
+
+const app = express();
+const server = http.Server(app);
+const io = socket(server);
+
+app.get('/',(req,res)=>{
+    path = __dirname + 'public/index.html';
+    res.sendFile(path);
+});
+app.use('/', express.static(__dirname + '/'));
+app.use(express.static('public'));
 
 function commands(msg){
     let body;
