@@ -158,7 +158,13 @@ body{
     margin-left: 5%;
 }
 .blanco{
+    width: 80%;
     position: absolute;
     background-color: white;
-    margin-left: 15%;
+    border: 1em solid;
+    padding: 5%;
+    border-left-color: rgb(194, 194, 194);
+    border-bottom-color: rgb(194, 194, 194);
+    border-top-color: rgb(194, 194, 194);
+    border-right-color: white;
 }
