@@ -168,3 +168,11 @@ body{
     border-top-color: rgb(194, 194, 194);
     border-right-color: white;
 }
+#chat{
+    background-color: aquamarine;
+    position: absolute;
+    margin-top: 90.75%;
+    margin-left: -42.35%;
+    width: 33.35em;
+    height: 19.5em;
+}
