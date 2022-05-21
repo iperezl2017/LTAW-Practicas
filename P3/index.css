@@ -138,3 +138,21 @@ body{
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
 }
+.left{
+    margin-left: 8%;
+    width: 20%;
+    position: absolute;
+    background-color: rgb(194, 194, 194);
+}
+.floren{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.visitas{
+    margin-top: -11%;
+    margin-left: 47%;
+    position: absolute;
+}
+.linea3{
+    margin-left: 5%;
+}
