@@ -9,7 +9,7 @@ socket.on("message", (msg) =>{
 
 entradamsg.onchange = () => {
     if(entradamsg.value){
-        socket.send('>' + entradamsg.value);
+        socket.send(entradamsg.value);
     }
     entradamsg.value = "";
 }

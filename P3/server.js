@@ -29,39 +29,35 @@ app.get('/',(req,res)=>{
 app.use('/', express.static(__dirname + '/'));
 app.use(express.static('public'));
 
-function commands(msg){
-    let body;
-    if(msg == '/help') {
-        body = help_msg;
-    }else if(msg == '/list') {
-        body = list_msg + users;
-    }else if(msg == '/help') {
-        body = hello_msg;
-    }else if(msg == '/help') {
-        body = date_msg;
-    }else{
-        body = error_msg;
-    }
-};
-
 io.on('connect',(socket) => {
     console.log("nuevo usuario")
     users += 1;
     socket.send("Bienvenido");
     io.send("Un nuevo usuario ha entrado en la sala");
     socket.on('disconnect',function(){
-        console.log("desconexion");
+        console.log("desconexion".red);
         users -= 1;
         io.send("Xaoxaoxaoxao");
     });
 
     socket.on("message",(msg)=>{
-        console.log("mensaje recibido")
-        if(msg.startsWith('/')){
-            body = commands(msg_text);
+        var socketId = socket.id
+        console.log("mensaje recibido".green)
+        console.log(msg.red)
+        if(msg == '/help') {
+            body = help_msg;
+            socket.send(body);
+        }else if(msg == '/list') {
+            body = list_msg + users;
+            socket.send(body);
+        }else if(msg == '/hello') {
+            body = hello_msg;
+            socket.send(body);
+        }else if(msg == '/date') {
+            body = date_msg;
             socket.send(body);
         }else{
-            io.send(msg)
+            io.send(msg);
         }
     });
 });
