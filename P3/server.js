@@ -57,14 +57,7 @@ io.on('connect',(socket) => {
 
     socket.on("message",(msg)=>{
         console.log("mensaje recibido")
-        msg_text = msg.split(' ')[1];
-        console.log(msg_text);
-        if(typeof msg_text == 'undefined'){
-            return msg_text.toUTCString();
-        }else{
-            return msg_text;
-        }
-        if(msg_text.charAt(0) == ('/')){
+        if(msg.startsWith('/')){
             body = commands(msg_text);
             socket.send(body);
         }else{

@@ -178,11 +178,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     border-style: solid;
     border-color: rgb(0, 0, 0);
+    overflow-y: scroll;
 }
 #display{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(202, 202, 202);
-    overflow-y: scroll;
+    height: 20%;
 
 }
 #msg{
@@ -193,5 +194,6 @@ body{
     padding: 0.75em;
     width: 35em;
     position:absolute;
-    margin-top: -20%;
+    margin-top: 140%;
+    margin-left: -40%;
 }
