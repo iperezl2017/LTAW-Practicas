@@ -3,6 +3,9 @@ const entradamsg = document.getElementById("entradamsg");
 
 const socket = io();
 
+let nickname = 'Unkown';
+let writing = false;
+
 socket.on("message", (msg) =>{
     display.innerHTML += '<p style= "color:black">' + msg + '</p>';
 });
@@ -10,6 +13,14 @@ socket.on("message", (msg) =>{
 entradamsg.onchange = () => {
     if(entradamsg.value){
         socket.send(entradamsg.value);
+        writing = false;
     }
     entradamsg.value = "";
+}
+
+entradamsg.oninput = () => {
+    if (!writing){
+        writing = true;
+        socket.send(nickname + 'esta escribiendo...');
+    }
 }
