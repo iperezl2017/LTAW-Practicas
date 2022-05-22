@@ -3,8 +3,6 @@ const entradamsg = document.getElementById("entradamsg");
 
 const socket = io();
 
-let nickname = 'Unkown';
-let writing = false;
 
 socket.on("message", (msg) =>{
     display.innerHTML += '<p style= "color:black">' + msg + '</p>';
