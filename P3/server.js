@@ -2,7 +2,6 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
-const path = require('path');
 const port = 9090;
 const tiempo = Date.now();
 const fecha = new Date(tiempo);
@@ -24,7 +23,7 @@ const server = http.Server(app);
 const io = socket(server);
 
 app.get('/',(req,res)=>{
-    path = __dirname + 'public/index.html';
+    path = __dirname + '/index.html';
     res.sendFile(path);
 });
 app.use('/', express.static(__dirname + '/'));
@@ -34,20 +33,16 @@ function commands(msg){
     let body;
     if(msg == '/help') {
         body = help_msg;
-    }
-    else if(msg == '/list') {
+    }else if(msg == '/list') {
         body = list_msg + users;
-    }
-    else if(msg == '/help') {
+    }else if(msg == '/help') {
         body = hello_msg;
-    }
-    else if(msg == '/help') {
+    }else if(msg == '/help') {
         body = date_msg;
-    }
-    else{
+    }else{
         body = error_msg;
     }
-}
+};
 
 io.on('connect',(socket) => {
     console.log("nuevo usuario")
@@ -63,7 +58,13 @@ io.on('connect',(socket) => {
     socket.on("message",(msg)=>{
         console.log("mensaje recibido")
         msg_text = msg.split(' ')[1];
-        if (msg_text.starsWith('/')){
+        console.log(msg_text);
+        if(typeof msg_text == 'undefined'){
+            return msg_text.toUTCString();
+        }else{
+            return msg_text;
+        }
+        if(msg_text.charAt(0) == ('/')){
             body = commands(msg_text);
             socket.send(body);
         }else{

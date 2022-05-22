@@ -181,7 +181,8 @@ body{
 }
 #display{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+    background-color: rgb(202, 202, 202);
+    overflow-y: scroll;
 
 }
 #msg{
@@ -191,4 +192,6 @@ body{
 #entradamsg{
     padding: 0.75em;
     width: 35em;
+    position:absolute;
+    margin-top: -20%;
 }
