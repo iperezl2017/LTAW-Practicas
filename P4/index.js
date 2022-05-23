@@ -28,3 +28,13 @@ electron.ipcRenderer.on('informacion', (event, message) => {
         code.src = url;
     });
 });
+
+electron.ipcRenderer.on('users', (event, message) =>{
+    users.textContent = message;
+});
+electron.ipcRenderer.on('msg_client', (event,message) => {
+    msgs.innerHTML += message + "<br>";
+});
+button.onclick = () => {
+    electron.ipcRenderer.invoke('test', "Te veo");
+}
