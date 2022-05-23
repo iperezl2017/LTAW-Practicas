@@ -55,24 +55,21 @@ io.on('connect', (socket) => {
     socket.on("message",(msg)=> {
         console.log("Mensaje recibido: " + msg.yellow);
         win.webContents.send('msg_client', msg);
-        msg_text = msg.split(' ')[1];
-        if(msg_text.startsWith('/')){
-            console.log("Recibido: " + msg_text.blue);
-            if(msg_text == '/help') {
-                body = help_msg;
-                socket.send(body);
-            }else if(msg_text == '/list') {
-                body = list_msg + users;
-                socket.send(body);
-            }else if(msg_text == '/hello') {
-                body = hello_msg;
-                socket.send(body);
-            }else if(msg_text == '/date') {
-                body = date_msg;
-                socket.send(body);
-            }else{
-                io.send(msg_text);
-            }
+        console.log("Recibido: " + msg.green);
+        if(msg == '/help') {
+            body = help_msg;
+            socket.send(body);
+        }else if(msg == '/list') {
+            body = list_msg + users;
+            socket.send(body);
+        }else if(msg == '/hello') {
+            body = hello_msg;
+            socket.send(body);
+        }else if(msg == '/date') {
+            body = date_msg;
+            socket.send(body);
+        }else{
+            io.send(msg);
         }
     });
 });

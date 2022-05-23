@@ -17,13 +17,16 @@
     },
     "build": {
         "appId": "mi-electron-app-1-id",
-        "win":{
-            "target": "NSIS"
+        "linux":{
+            "target": [
+                "AppImage"
+            ],
+            "category": "Utility"
         }
     },
     "devDependencies": {
-        "electron": "^18.2.4",
-        "electron-builder": "^22.11.3"
+        "electron": "^18.0.1",
+        "electron-builder": "^22.14.13"
     },
     "dependencies": {
         "colors": "^1.4.0",

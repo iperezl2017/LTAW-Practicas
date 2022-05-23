@@ -1,8 +1,6 @@
 const display = document.getElementById("display");
-const entradamsg = document.getElementById("msg_entry");
-const msg_nick = document.getElementById("nick");
+const entradamsg = document.getElementById("entradamsg");
 
-let nickname = "Unkown";
 
 const socket = io();
 
@@ -12,12 +10,7 @@ socket.on("message", (msg) =>{
 
 entradamsg.onchange = () => {
     if(entradamsg.value){
-        socket.send(nickname + ': ' + entradamsg.value);
+        socket.send(entradamsg.value);
     }
     entradamsg.value = "";
-}
-msg_nick.onchange = () => {
-    if(msg_nick.value){
-        nickname = msg_nick.value;
-    }
 }
