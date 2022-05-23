@@ -30,7 +30,7 @@ const app = express();
 const server = http.Server(app);
 const io = socket(server);
 
-app.get('/',(req,res) => {
+app.get('/', (req, res) => {
     path = __dirname + '/chat.html';
     res.sendFile(path);
     console.log("Solicitud de acceso");
