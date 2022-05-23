@@ -9,31 +9,28 @@ const plat = document.getElementById("plat");
 const dir = document.getElementById("dir");
 const users = document.getElementById("users");
 const dir_ip = document.getElementById("ip");
-const code = document.getElementById("qrcode");
 const button = document.getElementById("btn_test");
-const msgs = document.getElementById("display");
+const display = document.getElementById("display");
 
 
-electron.ipcRenderer.on('informacion', (event, message) => {
-    v_node.textContent = message[0];
-    v_chrome.textContent = message[1];
-    v_electron.textContent = message[2];
-    arch.textContent = message[3];
-    plat.textContent = message[4];
-    dir.textContent = message[5];
-    url = ("http://" + message[6] + ":" + message[7] + "/" + message[8]);
-    dir_ip.textContent = url;
 
-    qrcode.toDataURL(url, function(err,url){
-        code.src = url;
-    });
+
+electron.ipcRenderer.on('informacion', (event, message) => {  
+   v_node.textContent = message[0];
+   v_chrome.textContent = message[1];
+   v_electron.textContent = message[2];
+   arch.textContent = message[3];
+   plat.textContent = message[4];
+   dir.textContent = message[5];
+   url = ("http://" + message[6] + ":" + message[7] + "/" + message[8]);
+   dir_ip.textContent = url;
 });
 
 electron.ipcRenderer.on('users', (event, message) =>{
-    users.textContent = message;
+    users.textContent +=  message;
 });
 electron.ipcRenderer.on('msg_client', (event,message) => {
-    msgs.innerHTML += message + "<br>";
+    display.innerHTML += '<p style="color:blue">' + message + "<br>";
 });
 button.onclick = () => {
     electron.ipcRenderer.invoke('test', "Te veo");

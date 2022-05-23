@@ -5,6 +5,8 @@ const colors = require('colors');
 const electron = require('electron');
 const ip = require('ip');
 const process = require('process');
+const { arch, platform } = require('os');
+const { dir } = require('console');
 const port = 9090;
 const time = Date.now();
 const fecha = new Date(time);
@@ -91,15 +93,17 @@ console.log("Escuchando en puerto: " + port);
     let fichero = "index.html"
     win.loadFile(fichero);
 
-    v_node = process.versions.node;
+    v_node= process.versions.node;
     v_chrome = process.versions.chrome;
     v_electron = process.versions.electron;
-    arch = process.arch;
-    platform = process.platform;
+    archi = process.arch;
+    platf = process.platform;
     direct = process.cwd();
     dir_ip = ip.address();
 
-    let datos = [v_node, v_chrome, v_electron, arch, platform, direct, dir_ip, port, fichero];
+    let datos = [v_node,v_chrome,v_electron,archi,platf,direct,dir_ip,port,fichero];
+
+
     win.on('ready-to-show', () => {
         win.webContents.send('informacion', datos);
     });
