@@ -10,7 +10,7 @@ const { dirname } = require('path');
 const { platform } = require('os');
 const port = 9090;
 const time = Date.now();
-const fecha = new Date(tiempo);
+const fecha = new Date(time);
 
 let users = 0;
 let win = null;
@@ -46,31 +46,38 @@ io.on('connect', (socket) => {
     win.webContents.send('users', users);
     socket.send(welcome_msg);
     io.send(newuser_msg);
-    win.webContents.send('msg_client', userleft_msg);
-});
+    win.webContents.send('msg_client', newuser_msg);
 
-socket.on("message",(msg)=> {
-    console.log("Mensaje recibido: " + msg.yellow);
-    win.webContents.send('msg_client', msg);
-    msg_text = msg.split(' ')[1];
-    if(msg_text.startsWith('/')){
-        console.log("Recibido: " + msg_text.blue);
-        if(msg_text == '/help') {
-            body = help_msg;
-            socket.send(body);
-        }else if(msg_text == '/list') {
-            body = list_msg + users;
-            socket.send(body);
-        }else if(msg_text == '/hello') {
-            body = hello_msg;
-            socket.send(body);
-        }else if(msg_text == '/date') {
-            body = date_msg;
-            socket.send(body);
-        }else{
-            io.send(msg_text);
+    socket.on('disconnect', function(){
+        console.log("DISCONNECTED".red);
+        users -= 1;
+        win.webContents.send('users',users);
+        io.send(userleft_msg);
+        win.webContents.send('msg_client',userleft_msg);
+    });
+    socket.on("message",(msg)=> {
+        console.log("Mensaje recibido: " + msg.yellow);
+        win.webContents.send('msg_client', msg);
+        msg_text = msg.split(' ')[1];
+        if(msg_text.startsWith('/')){
+            console.log("Recibido: " + msg_text.blue);
+            if(msg_text == '/help') {
+                body = help_msg;
+                socket.send(body);
+            }else if(msg_text == '/list') {
+                body = list_msg + users;
+                socket.send(body);
+            }else if(msg_text == '/hello') {
+                body = hello_msg;
+                socket.send(body);
+            }else if(msg_text == '/date') {
+                body = date_msg;
+                socket.send(body);
+            }else{
+                io.send(msg_text);
+            }
         }
-    }
+    });
 });
 
 server.listen(port);
