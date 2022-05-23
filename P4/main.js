@@ -71,3 +71,28 @@ socket.on("message",(msg)=> {
         }
     }
 });
+
+server.listen(port);
+console.log("Escuchando en puerto: " + port);
+electron.app.on('ready', () => {
+    win = new electron.BrowserWindow({
+        width : 900,
+        height : 900,
+
+        webPreferences:{
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    }
+});
+
+let fichero = "index.html"
+win.loadFile(fichero);
+
+v_node = process.versions.node;
+v_chrome = process.versions.chrome;
+v_electron = process.versions.electron;
+arch = process.arch;
+platform = process.platform;
+direct = process.cwd();
+dir_ip = ip.address();
