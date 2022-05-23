@@ -5,9 +5,6 @@ const colors = require('colors');
 const electron = require('electron');
 const ip = require('ip');
 const process = require('process');
-const path = require('path');
-const { dirname } = require('path');
-const { platform } = require('os');
 const port = 9090;
 const time = Date.now();
 const fecha = new Date(time);
@@ -34,7 +31,7 @@ const server = http.Server(app);
 const io = socket(server);
 
 app.get('/',(req,res) => {
-    path = __dirname + 'chat.html';
+    path = __dirname + '/chat.html';
     res.sendFile(path);
     console.log("Solicitud de acceso");
 });
@@ -104,7 +101,6 @@ console.log("Escuchando en puerto: " + port);
     platform = process.platform;
     direct = process.cwd();
     dir_ip = ip.address();
-
 
     let datos = [v_node, v_chrome, v_electron, arch, platform, direct, dir_ip, port, fichero];
     win.on('ready-to-show', () => {
