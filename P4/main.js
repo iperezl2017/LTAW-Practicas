@@ -82,36 +82,37 @@ io.on('connect', (socket) => {
 
 server.listen(port);
 console.log("Escuchando en puerto: " + port);
-electron.app.on('ready', () => {
-    win = new electron.BrowserWindow({
-        width : 900,
-        height : 900,
+    electron.app.on('ready', () => {
+        win = new electron.BrowserWindow({
+            width : 900,
+            height : 900,
 
-        webPreferences:{
-            nodeIntegration: true,
-            contextIsolation: false
-        }
-    }
-)});
+            webPreferences:{
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        
+    });
 
-let fichero = "index.html"
-win.loadFile(fichero);
+    let fichero = "index.html"
+    win.loadFile(fichero);
 
-v_node = process.versions.node;
-v_chrome = process.versions.chrome;
-v_electron = process.versions.electron;
-arch = process.arch;
-platform = process.platform;
-direct = process.cwd();
-dir_ip = ip.address();
+    v_node = process.versions.node;
+    v_chrome = process.versions.chrome;
+    v_electron = process.versions.electron;
+    arch = process.arch;
+    platform = process.platform;
+    direct = process.cwd();
+    dir_ip = ip.address();
 
 
-let datos = [v_node, v_chrome, v_electron, arch, platform, direct, dir_ip, port, fichero];
-win.on('ready-to-show', () => {
-    win.webContents.send('informacion', datos);
+    let datos = [v_node, v_chrome, v_electron, arch, platform, direct, dir_ip, port, fichero];
+    win.on('ready-to-show', () => {
+        win.webContents.send('informacion', datos);
+    });
 });
 
 electron.ipcMain.handle('test', (event,msg) => {
     console.log("-> Mensaje: " + msg);
     io.send(msg);
-})
+});
