@@ -1,1 +1,2 @@
  # Práctica 3
+La práctica 3 esta orientada a la antigua red social llamada Tuenti, la mayoría de inputs y de botones son meramente decorativos, exceptuando el input de abajo de la izquierda situado debajo del chat. El chat soporta los 4 comandos establecidos, /help , /list /date y /hello los cuales solo son devueltos al cliente que los ha puesto. Cada vez que entre un usuario se enviará un mensaje a todos los clientes haciendo saber que se ha conectado alguien y de la misma forma para cuando alguien se desconecte de que se ha desconectado
