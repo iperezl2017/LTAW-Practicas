@@ -1,5 +1,4 @@
 const electron = require('electron');
-const qrcode = require('qrcode');
 
 const v_node = document.getElementById("node");
 const v_chrome = document.getElementById("chrome");
@@ -27,10 +26,10 @@ electron.ipcRenderer.on('informacion', (event, message) => {
 });
 
 electron.ipcRenderer.on('users', (event, message) =>{
-    users.textContent +=  message;
+    users.textContent =  message;
 });
 electron.ipcRenderer.on('msg_client', (event,message) => {
-    display.innerHTML += '<p style="color:blue">' + message + "<br>";
+    display.innerHTML +=  message + "<br>";
 });
 button.onclick = () => {
     electron.ipcRenderer.invoke('test', "Te veo");
