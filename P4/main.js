@@ -7,6 +7,7 @@ const ip = require('ip');
 const process = require('process');
 const path = require('path');
 const { dirname } = require('path');
+const { platform } = require('os');
 const port = 9090;
 const time = Date.now();
 const fecha = new Date(tiempo);
@@ -84,7 +85,7 @@ electron.app.on('ready', () => {
             contextIsolation: false
         }
     }
-});
+)});
 
 let fichero = "index.html"
 win.loadFile(fichero);
@@ -96,3 +97,14 @@ arch = process.arch;
 platform = process.platform;
 direct = process.cwd();
 dir_ip = ip.address();
+
+
+let datos = [v_node, v_chrome, v_electron, arch, platform, direct, dir_ip, port, fichero];
+win.on('ready-to-show', () => {
+    win.webContents.send('informacion', datos);
+});
+
+electron.ipcMain.handle('test', (event,msg) => {
+    console.log("-> Mensaje: " + msg);
+    io.send(msg);
+})
