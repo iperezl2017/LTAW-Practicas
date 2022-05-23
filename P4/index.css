@@ -1,0 +1,50 @@
+body{
+    background-color: aquamarine;
+    font-family: fantasy;
+    font-size: 9px;
+}
+
+h1{
+    text-align: center;
+    background-color: rgb(7, 245, 165);
+    font-size: 40px;
+}
+h2{
+    font-family: fantasy;
+    font-size: 30px;
+}
+#right{
+    float: right;
+    width: 45%;
+    padding: 15px;
+    background-color: aqua;
+    border: solid;
+    height: 700px;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+input{
+    border-radius: 10px;
+    font-family: fantasy;
+    font-size: 9px;
+}
+
+input:hover{
+    border: solid rgb(100, 100, 1000) 3px;
+    background-color: skyblue;
+}
+#left{
+    float: left;
+    width: 40%;
+    padding: 15px;
+    background-color: blueviolet;
+    border: solid;
+    height: 700px;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+#display{
+    font-family: fantasy;
+    font-size: 15px;
+}
