@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuenti</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="bloque">
+        <img class="logo" src="./imagenes/logo-tuenti.png" width="100em" height="58em">
+        <ul class="menu">
+            <li class="separador"><a href="">Inicio</a></li>
+            <li><a href="">Perfil</a></li>
+            <li><a href="">Mensajes</a></li>
+            <li><a href="">Gente</a></li>
+            <li><a href="">Videos</a></li>
+            <li><a href="">Juegos</a></li>
+            <li><a href="">Sitios</a></li>
+            <li><input class="buscador" type="search" placeholder="Buscar..."></li>
+            <li><input class="boton" type="button" value="Subir fotos"></li>
+            <li class="cuenta"><a href="">Mi cuenta</a></li>
+        </ul>
+        <div class="mid">
+            <input class="pie" type="search" placeholder="Actualiza tu estado">
+            <p>Última actualización: Mañana empiezo 21 días sin Tuenti, primera entrada: 21</p>
+            <input class="guardar" type="button" value="Guardar">
+            <p>... hace más de una semana</p>
+            <div class="novedades">
+                <h1>Novedades</h1>
+                <p class="linea2">_________________________________________________________________________________</p>
+                <ul class="notificaciones">
+                    <li class="links">5 Amigos Nuevos</li>
+                        <p class="azul">Elon Musk, Jhonny Deep, Yung Beef, Alcasec y Pablo Motos</p>
+                        <br>
+                    <li class="links">8 comentarios</li>
+                        <br>
+                    <li class="links">4 fotos etiquetadas</li>
+                        <img class="img" src="./imagenes/anceloti.jpg">
+                        <img class="img" src="./imagenes/chad.jpg">
+                        <img class="img" src="./imagenes/emilio.jpg">
+                        <img class="img" src="./imagenes/frog.png">
+                        <br>
+                        <br>
+                    <li class="links">2 fotos subidas</li>
+                        <img class="img1" src="./imagenes/it.jpeg">
+                        <img class="img" src="./imagenes/francia.jpg">
+                        <br>
+                        <br>
+                    <li class="links">1 entrada</li>
+                        <p class="azul"> Mágico: Apex adventura (Parque natural el punto) </p>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="amigos">
+            <h2>Añadir amigos</h2>
+            <p class="linea">__________________________</p>
+            <p>¿Amigos en Hotmail, Gmail o Yahoo?</p>
+            <input class="buscar" type="button" value="Buscar amigos">
+            <h2>Chat (37)</h2>
+            <div class="enlinea">
+                <input class="amiwis" type="search" placeholder="Buscar amigo">
+                <br>
+                <li class="negro1">Tochu</li>
+                <br>
+                <li class="negro">Chanclass</li>
+                <br>
+                <li class="negro">Saraft</li>
+                <br>
+                <li class="negro">Chorprecha</li>
+                <br>
+                <li class="negro">Binnend</li>
+                <br>
+                <li class="negro">Avadem</li>
+                <br>
+                <li class="negro">LyliaLawliet</li>
+                <br>
+                <li class="negro">Samikito</li>
+                <br>
+                <li class="negro">Real</li>
+                <br>
+                <li class="negro">Suli</li>
+                <br>
+                <li class="negro">Pilahoz</li>
+                <br>
+                <li class="negro">Thelawend</li>
+                <br>
+            </div>
+        </div>
+        <div class="left">
+            <img class="floren" src="./imagenes/floren.jpg" width="40%" height="50%">
+            <p class="visitas">17.200 visitas a tu perfil</p>
+            <p class="linea3">_________________________________</p>
+            <br>
+            <div class="blanco">
+                <li class="links">8 mensajes privados</li>
+                <br>
+                <li class="links">1 estado con comentarios</li>
+                <br>
+                <li class="links">36 comentarios</li>
+                <br>
+                <li class="links">16 invitaciones a eventos</li>
+                <br>
+                <li class="links">13 etiquetas</li>
+                <br>
+                <li class="links">18 fotos con comentarios</li>
+                <br>
+                <li class="links">2 invitaciones a páginas</li> 
+            </div>
+            <div id="chat">
+                <h1>CHAT</h1>
+                <p id="display"></p>
+                <br>
+            </div>
+            <div id="msg">
+                <input type="text" placeholder="No tienes amigos" autocomplete="off" id="entradamsg">
+            </div>
+        </div> 
+    </div>
+</body>
+</html>

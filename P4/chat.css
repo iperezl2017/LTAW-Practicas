@@ -1,0 +1,199 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bloque{
+    position: relative;
+}
+.menu{
+    list-style: none;
+    padding: 0;
+    background: rgb(85, 143, 184);
+    width: 101.5%;
+    margin: auto;
+    margin-left: -1%;
+    margin-top: -0.5%;
+}
+.menu li{
+    display: inline-block;
+    text-align: center;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+.menu li a:hover{
+    background: rgb(46, 83, 109);
+}
+.separador{
+    margin-left: 20%;
+}
+.logo{
+    margin-left: 13%;
+    position: absolute;
+}
+.buscador{
+    padding: 0.75em;
+    margin-left: 5%;
+}
+.boton{
+    margin-left: 40%;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    background: rgb(32, 59, 78);
+    color: white;
+}
+.cuenta{
+    margin-left: 10%;
+}
+.mid{
+    margin-top: 1%;
+    margin-left: 32%;
+    position: absolute;
+}
+.pie{
+    padding: 1em;
+    width: 40em;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.novedades{
+    border-color: greenyellow;
+    border-style: solid;
+    margin-right: 35.5%;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+}
+.guardar{
+    position: absolute;
+    padding: 0.75em;
+    border-radius: 0.25em;
+    background: rgb(85, 143, 184);
+    color: white;
+    margin-left: 80%;
+    margin-top: -6%;
+    width: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.amigos{
+    position: absolute;
+    margin-left: 78%;
+}
+.linea{
+    margin-top: -14%;
+}
+.notificaciones{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.links{
+    color: rgb(131, 218, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+.azul{
+    color: rgb(0, 82, 206);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+.img{
+    width: 7em;
+    height: 7em;
+}
+.img1{
+    width: 12em;
+    height: 7em;
+}
+.linea2{
+    margin-top: -3%;
+    color: greenyellow;
+}
+.buscar{
+    padding: 0.75em;
+    border-radius: 0.25em;
+}
+.enlinea{
+    border-style: solid;
+    border-color: gray;
+}
+.negro1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.negro{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin-left: 2%;
+}
+.amiwis{
+    padding: 0.5em;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left{
+    margin-left: 8%;
+    width: 20%;
+    position: absolute;
+    background-color: rgb(194, 194, 194);
+    height: fit-content;
+}
+.floren{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.visitas{
+    margin-top: -11%;
+    margin-left: 47%;
+    position: absolute;
+}
+.linea3{
+    margin-left: 5%;
+}
+.blanco{
+    width: 80%;
+    position: absolute;
+    background-color: white;
+    border: 1em solid;
+    padding: 5%;
+    border-left-color: rgb(194, 194, 194);
+    border-bottom-color: rgb(194, 194, 194);
+    border-top-color: rgb(194, 194, 194);
+    border-right-color: white;
+}
+#chat{
+    background-color: rgb(202, 202, 202);
+    position: absolute;
+    margin-top: 90.75%;
+    margin-left: -42.30%;
+    width: 33em;
+    height: 16em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    overflow-y: scroll;
+}
+#display{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(202, 202, 202);
+    height: 20%;
+
+}
+#msg{
+    margin-top: 30%;
+    margin-left: 1.5%;
+}
+#entradamsg{
+    padding: 0.85em;
+    width: 40em;
+    position:absolute;
+    margin-top: 140%;
+    margin-left: -43.8%;
+}
