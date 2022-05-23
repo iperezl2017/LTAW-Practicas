@@ -42,8 +42,8 @@ io.on('connect',(socket) => {
 
     socket.on("message",(msg)=>{
         var socketId = socket.id
-        console.log("mensaje recibido".green)
-        console.log(msg.red)
+        console.log("mensaje recibido".green);
+        console.log(msg.yellow);
         if(msg == '/help') {
             body = help_msg;
             socket.send(body);
